@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#0d0d13">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Resenha Party Hub - 6 Mini-Jogos de Bebedeira</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER SUPERIOR -->
+  <header class="app-header">
+    <div class="header-left">
+      <button class="header-btn back-btn hidden" id="btnBackHub" aria-label="Voltar ao Menu">
+        <span>⬅️ Hub</span>
+      </button>
+      <div class="brand-wrapper">
+        <span class="brand-title">RESENHA HUB</span>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <!-- Botão de Som Mute/Unmute -->
+      <button class="header-btn sound-btn" id="btnToggleMute" aria-label="Alternar Som" title="Alternar Som">
+        🔊
+      </button>
+
+      <!-- Contador Rápido de Shots da Noite -->
+      <button class="header-btn shots-pill" id="btnOpenScoreboard" title="Abrir Placar">
+        <span class="shots-badge" id="headerShotsTotal">0 🥃</span>
+      </button>
+
+      <!-- Gerenciador de Jogadores -->
+      <button class="header-btn players-btn" id="btnOpenPlayers" title="Gerenciar Jogadores">
+        👥
+      </button>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL (SPA) -->
+  <main class="main-content">
+    
+    <!-- SEÇÃO HUB: SELEÇÃO DE JOGOS -->
+    <section class="hub-section" id="hubSection">
+      <div class="hub-hero">
+        <h1 class="hero-title">
+          <span class="neon-text-cyan">A RESENHA</span> <span class="neon-text-pink">COMEÇOU</span>
+        </h1>
+        <p class="hero-subtitle">Escolha um dos 6 mini-jogos, passe o aparelho na roda e prepare as bebidas!</p>
+        <div class="hub-status-bar">
+          <span class="status-badge" id="hubPlayersBadge">3 Jogadores</span>
+          <span class="status-badge">6 Jogos Disponíveis</span>
+        </div>
+      </div>
+
+      <!-- GRID COM OS 6 JOGOS -->
+      <div class="games-grid">
+        
+        <!-- JOGO 1: A GARRAFA -->
+        <article class="game-card card-cyan" data-game="garrafa">
+          <div class="card-top">
+            <span class="card-icon">🍾</span>
+            <span class="card-tag">Física Real</span>
+          </div>
+          <div>
+            <h2 class="card-title">A Garrafa</h2>
+            <p class="card-desc">Gire a garrafa vetorial. O gargalo aponta para quem responde e o fundo para o juiz. Verdade ou Desafio!</p>
+          </div>
+          <div class="card-action">
+            <span>Jogar Agora</span> ➔
+          </div>
+        </article>
+
+        <!-- JOGO 2: QUEM É MAIS PROVÁVEL? -->
+        <article class="game-card card-purple" data-game="provavel">
+          <div class="card-top">
+            <span class="card-icon">👉</span>
+            <span class="card-tag">Votação 3s</span>
+          </div>
+          <div>
+            <h2 class="card-title">Quem é Mais Provável?</h2>
+            <p class="card-desc">Contagem regressiva sincronizada 3.. 2.. 1.. APONTEM! A maioria dos votos bebe a dose.</p>
+          </div>
+          <div class="card-action">
+            <span>Jogar Agora</span> ➔
+          </div>
+        </article>
+
+        <!-- JOGO 3: EU NUNCA -->
+        <article class="game-card card-pink" data-game="eununca">
+          <div class="card-top">
+            <span class="card-icon">🙅</span>
+            <span class="card-tag">5 Vidas</span>
+          </div>
+          <div>
+            <h2 class="card-title">Eu Nunca</h2>
+            <p class="card-desc">Afirmações de segredos e vergonhas. Quem já fez perde 1 vida e toma 1 shot. Zerou? Castigo coletivo!</p>
+          </div>
+          <div class="card-action">
+            <span>Jogar Agora</span> ➔
+          </div>
+        </article>
+
+        <!-- JOGO 4: COPO DO REI -->
+        <article class="game-card card-yellow" data-game="copodorei">
+          <div class="card-top">
+            <span class="card-icon">👑</span>
+            <span class="card-tag">Baralho 52</span>
+          </div>
+          <div>
+            <h2 class="card-title">Copo do Rei</h2>
+            <p class="card-desc">Baralho completo com regras instantâneas e copo com líquido subindo. O 4º Rei vira a taça!</p>
+          </div>
+          <div class="card-action">
+            <span>Jogar Agora</span> ➔
+          </div>
+        </article>
+
+        <!-- JOGO 5: BOMBA-RELÓGIO -->
+        <article class="game-card card-green" data-game="bomba">
+          <div class="card-top">
+            <span class="card-icon">💣</span>
+            <span class="card-tag">Tempo Oculto</span>
+          </div>
+          <div>
+            <h2 class="card-title">Bomba-Relógio</h2>
+            <p class="card-desc">Fale um item da categoria sorteada e passe a bomba! O tique-taque acelera e explode sem aviso.</p>
+          </div>
+          <div class="card-action">
+            <span>Jogar Agora</span> ➔
+          </div>
+        </article>
+
+        <!-- JOGO 6: QUEM SOU EU? (NA TESTA) -->
+        <article class="game-card card-blue" data-game="natesta">
+          <div class="card-top">
+            <span class="card-icon">🙆</span>
+            <span class="card-tag">Heads Up 60s</span>
+          </div>
+          <div>
+            <h2 class="card-title">Modo "Na Testa"</h2>
+            <p class="card-desc">Coloque o celular na horizontal na testa! Letras gigantes, 60s e toques rápidos de Acerto ou Pulo.</p>
+          </div>
+          <div class="card-action">
+            <span>Jogar Agora</span> ➔
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO ATIVA DE JOGO (ONDE OS MINI-JOGOS SÃO MONTADOS DINAMICAMENTE) -->
+    <section class="game-section hidden" id="gameSection">
+      <div id="gameContainer"></div>
+    </section>
+
+  </main>
+
+  <!-- BOTÃO FLUTUANTE (FAB) DO PLACAR GERAL -->
+  <button class="fab-score" id="fabScore" title="Abrir Placar Geral" aria-label="Abrir Placar Geral">
+    🏆
+  </button>
+
+  <!-- MODAL: PLACAR GERAL UNIFICADO -->
+  <div class="modal-overlay hidden" id="scoreModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="neon-text-yellow">🏆 Placar Geral da Resenha</h3>
+        <button class="modal-close-btn" id="btnCloseScoreModal" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal-body">
+        <table class="scoreboard-table">
+          <thead>
+            <tr>
+              <th>Jogador</th>
+              <th>Shots 🥃</th>
+              <th>Desafios 🏆</th>
+              <th>Arregou 🐔</th>
+            </tr>
+          </thead>
+          <tbody id="scoreboardTableBody">
+            <!-- Renderizado dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" id="btnResetScores">Zerar Placar</button>
+        <button class="action-btn success-btn" onclick="document.getElementById('scoreModal').classList.add('hidden')">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: GERENCIAMENTO DE JOGADORES -->
+  <div class="modal-overlay hidden" id="playersModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="neon-text-cyan">👥 Jogadores na Roda</h3>
+        <button class="modal-close-btn" id="btnClosePlayersModal" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="add-player-box">
+          <input type="text" id="inputPlayerName" class="input-neon" placeholder="Nome do novo amigo..." maxlength="20">
+          <button class="btn-add-player" id="btnAddPlayer">+ Adicionar</button>
+        </div>
+        <div class="players-list" id="playersListContainer">
+          <!-- Renderizado dinamicamente -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <small style="color: var(--text-muted);">Mínimo de 2 jogadores ativos.</small>
+        <button class="action-btn neon-btn-cyan" onclick="document.getElementById('playersModal').classList.add('hidden')">Pronto</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS DA APLICAÇÃO -->
+  <script src="js/audio.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/games/garrafa.js"></script>
+  <script src="js/games/provavel.js"></script>
+  <script src="js/games/eununca.js"></script>
+  <script src="js/games/copodorei.js"></script>
+  <script src="js/games/bomba.js"></script>
+  <script src="js/games/natesta.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
