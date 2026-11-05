@@ -58,6 +58,7 @@ Uma **Single Page Application (SPA)** completa, ultra-responsiva e sem dependên
   * Cancelamento seguro de todos os `requestAnimationFrame`, `setTimeout` e `setInterval` ao navegar entre telas ou reiniciar partidas.
   * Failsafes com timeout máximo nas animações para impedir qualquer travamento de loop.
   * Modais com fechamento redundante (botão, clique fora e tecla `Escape`).
+* **PWA & Funcionamento 100% Offline:** `Service Worker` (`sw.js`) configurado com pré-cache completo de todos os assets e `manifest.json` com ícones para instalação direta na tela inicial (Add to Home Screen).
 * **Persistência de Sessão:** Salva jogadores e pontuações no `localStorage`.
 * **Placar Geral Unificado:** Acessível a qualquer momento via botão no cabeçalho ou Floating Action Button (FAB), com ajuste rápido de Shots (🥃), Desafios (🏆) e Arregadas (🐔).
 * **Jogadores Padrão:** Pré-configurados com **Marquito**, **Nic** e **Vivi**, com modal de adição e remoção em tempo real.

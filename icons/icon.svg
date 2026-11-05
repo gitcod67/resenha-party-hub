@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0d0d13"/>
+    </radialGradient>
+    <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f3ff"/>
+      <stop offset="50%" stop-color="#bc13fe"/>
+      <stop offset="100%" stop-color="#ff007f"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#00f3ff" flood-opacity="0.7"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="25" flood-color="#ff007f" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="120" fill="url(#bgGrad)"/>
+  
+  <!-- Outer Neon Ring -->
+  <rect x="24" y="24" width="464" height="464" rx="100" fill="none" stroke="url(#neonGrad)" stroke-width="8" opacity="0.6"/>
+
+  <!-- Center Graphic: Crown & Glowing Cocktail/Shot Glass -->
+  <g filter="url(#glow)">
+    <!-- Crown -->
+    <path d="M 176 170 L 210 220 L 256 150 L 302 220 L 336 170 L 326 240 L 186 240 Z" fill="#ffe600" />
+    <circle cx="176" cy="165" r="7" fill="#ffe600"/>
+    <circle cx="256" cy="145" r="9" fill="#00f3ff"/>
+    <circle cx="336" cy="165" r="7" fill="#ffe600"/>
+
+    <!-- Cup / Glass Outline -->
+    <path d="M 160 250 L 352 250 L 310 390 C 300 420 280 430 256 430 C 232 430 212 420 202 390 Z" 
+          fill="none" stroke="url(#neonGrad)" stroke-width="14" stroke-linejoin="round" stroke-linecap="round"/>
+    
+    <!-- Liquid Glow -->
+    <path d="M 180 290 Q 256 310 332 290 L 305 385 C 298 405 280 415 256 415 C 232 415 214 405 207 385 Z" 
+          fill="url(#neonGrad)" opacity="0.75"/>
+
+    <!-- Sparkles -->
+    <polygon points="130,220 135,235 150,240 135,245 130,260 125,245 110,240 125,235" fill="#00ff88" />
+    <polygon points="380,210 385,222 398,225 385,228 380,240 375,228 362,225 375,222" fill="#00f3ff" />
+  </g>
+</svg>
